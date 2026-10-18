@@ -1,0 +1,281 @@
+html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pine Grove House · Restoran Bogor</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons (opsional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* smooth scroll & sentuhan tambahan */
+    html { scroll-behavior: smooth; }
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.25); }
+    .bg-pine { background: #1e3a2f; } /* aksen hijau pinus */
+    .border-pine { border-color: #2d5a43; }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+  <!-- ========== HEADER / NAVBAR ========== -->
+  <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-30 border-b border-pine/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-tree text-2xl text-emerald-700"></i>
+        <span class="text-xl font-bold tracking-tight text-stone-800">Pine<span class="text-emerald-700">Grove</span></span>
+        <span class="hidden sm:inline-block text-xs font-medium bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full ml-1">House</span>
+      </div>
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#menu" class="hover:text-emerald-700 transition">Menu</a>
+        <a href="#about" class="hover:text-emerald-700 transition">Tentang</a>
+        <a href="#contact" class="hover:text-emerald-700 transition">Kontak</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/6285976546706" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded-full flex items-center gap-2 transition shadow-sm">
+          <i class="fab fa-whatsapp"></i> <span class="hidden sm:inline">Pesan</span>
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-stone-600 hover:text-emerald-700 transition">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-sm border-t border-pine/10 px-4 py-3 hidden flex-col gap-2 text-sm">
+      <a href="#menu" class="py-2 hover:text-emerald-700 border-b border-stone-100">Menu</a>
+      <a href="#about" class="py-2 hover:text-emerald-700 border-b border-stone-100">Tentang</a>
+      <a href="#contact" class="py-2 hover:text-emerald-700">Kontak</a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="relative bg-gradient-to-br from-stone-100 to-emerald-50/60 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 text-center md:text-left">
+        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">✨ Restoran & Kopi</span>
+        <h1 class="text-4xl sm:text-5xl font-bold leading-tight text-stone-800">Pine Grove <br><span class="text-emerald-700">House</span></h1>
+        <p class="text-stone-600 text-lg mt-4 max-w-lg mx-auto md:mx-0">Suasana asri di kaki Gunung Salak. Cita rasa Nusantara & internasional, disajikan dengan kehangatan.</p>
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-6">
+          <a href="#menu" class="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 rounded-full font-medium transition shadow-lg shadow-emerald-200 flex items-center gap-2">
+            <i class="fas fa-utensils"></i> Lihat Menu
+          </a>
+          <a href="#contact" class="bg-white hover:bg-stone-50 text-stone-700 px-6 py-3 rounded-full font-medium border border-stone-300 transition flex items-center gap-2">
+            <i class="fas fa-map-pin"></i> Alamat
+          </a>
+        </div>
+        <div class="flex items-center gap-4 mt-6 text-sm text-stone-500 justify-center md:justify-start">
+          <span><i class="fas fa-star text-yellow-500"></i> 4.9 (120+ ulasan)</span>
+          <span class="hidden sm:inline">•</span>
+          <span class="hidden sm:inline"><i class="fas fa-clock text-emerald-600"></i> 08.00 - 22.00</span>
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-white/80">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pine Grove House interior" class="object-cover w-full h-full">
+          <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-1">
+            <i class="fas fa-camera"></i> suasana
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section id="menu" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-stone-800">🍽️ Menu Spesial <span class="text-emerald-700">2026</span></h2>
+        <p class="text-stone-500 mt-2">Harga berlaku mulai Januari 2026</p>
+      </div>
+
+      <!-- Grid menu 3 kolom -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Item 1 -->
+        <div class="card-hover bg-stone-50 rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Crispy Tofu Salad Bowl" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-semibold">Crispy Tofu Salad Bowl</h3>
+              <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full">Rp 50.000</span>
+            </div>
+            <p class="text-stone-500 text-sm mt-1">Salad Sehat ditemani sayuran yang melimpah dengan telur crispy.</p>
+            <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+              <span><i class="fas fa-fire"></i> 450 cal</span>
+              <span><i class="far fa-clock"></i> 20 min</span>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="card-hover bg-stone-50 rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pizza Pine" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-semibold">Pizza Pine</h3>
+              <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full">Rp 65.000</span>
+            </div>
+            <p class="text-stone-500 text-sm mt-1">Pizza teflon with mozzarella, pepperoni, jamur & pine honey.</p>
+            <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+              <span><i class="fas fa-fire"></i> 580 cal</span>
+              <span><i class="far fa-clock"></i> 25 min</span>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="card-hover bg-stone-50 rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rpyal Drizzle Dounut" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-semibold">Royal Drizzle Donut Chocolate</h3>
+              <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full">Rp 60.000</span>
+            </div>
+            <p class="text-stone-500 text-sm mt-1">Donat Kentang yang lembut di selimuti glaze chocolate dari belgia.</p>
+            <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+              <span><i class="fas fa-fire"></i> 520 cal</span>
+              <span><i class="far fa-clock"></i> 30 min</span>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="card-hover bg-stone-50 rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Summer Salmon & Rice Midely="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-semibold">Summer Salmon & Rice Midely</h3>
+              <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full">Rp 55.000</span>
+            </div>
+            <p class="text-stone-500 text-sm mt-1">Grilled Salmon filet,seasoned rice,fresh green beans,cherry tomatoes,and aromatic herbs.</p>
+            <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+              <span><i class="fas fa-fire"></i> 490 cal</span>
+              <span><i class="far fa-clock"></i> 18 min</span>
+            </div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="card-hover bg-stone-50 rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rustic Fondue Platter" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex justify-between items-start">  <h3 class="text-xl font-semibold">Rustic Fondue Platter</h3>
+              <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full">Rp 72.000</span>
+            </div>
+            <p class="text-stone-500 text-sm mt-1">Melted Chesee fondue,fresh black grapes,sliced apples,crispy crackers,smoked saussage,and fresh rosemary sprigs.</p>
+            <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+              <span><i class="fas fa-fire"></i> 670 cal</span>
+              <span><i class="far fa-clock"></i> 22 min</span>
+            </div>
+          </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="card-hover bg-stone-50 rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pinkish Berry Frost" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-semibold">Pinkish Berry Frost</h3>
+              <span class="bg-emerald-100 text-emerald-800 text-sm font-bold px-3 py-1 rounded-full">Rp 32.000</span>
+            </div>
+            <p class="text-stone-500 text-sm mt-1">Strawberry segar dengan coconut milk , es batu pinus.</p>
+            <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+              <span><i class="fas fa-fire"></i> 120 cal</span>
+              <span><i class="far fa-clock"></i> 8 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10 text-sm text-stone-400">
+        <i class="fas fa-leaf text-emerald-600 mr-1"></i> * Harga sudah termasuk pajak 11% 
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TENTANG & ALAMAT ========== -->
+  <section id="about" class="py-16 bg-emerald-50/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Suasana Pine Grove House" class="rounded-3xl shadow-xl object-cover w-full h-72 md:h-96">
+      </div>
+      <div>
+        <span class="inline-block bg-emerald-200 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">Tentang Kami</span>
+        <h2 class="text-3xl font-bold text-stone-800">Pine Grove <span class="text-emerald-700">House</span></h2>
+        <p class="text-stone-600 mt-4 leading-relaxed">Berada di Jl. Ciraya Rt14 Rw17, Bogor, kami menghadirkan pengalaman bersantap di tengah pepohonan pinus. Menu kami memadukan resep turun-temurun dan sentuhan modern, menggunakan bahan segar dari kebun sendiri.</p>
+        <div class="mt-6 space-y-2 text-stone-700">
+          <div class="flex items-start gap-3"><i class="fas fa-location-dot text-emerald-600 mt-1 w-5"></i> <span>Jl. Ciraya Rt14 Rw17, Bogor (dekat pintu tol)</span></div>
+          <div class="flex items-start gap-3"><i class="fas fa-phone text-emerald-600 mt-1 w-5"></i> <span>0859-7654-6706 (WA)</span></div>
+          <div class="flex items-start gap-3"><i class="fas fa-clock text-emerald-600 mt-1 w-5"></i> <span>Buka setiap hari 08.00 – 22.00</span></div>
+        </div>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="https://wa.me/6285976546706" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full flex items-center gap-2 text-sm transition"><i class="fab fa-whatsapp"></i> Chat WA</a>
+          <a href="#" class="bg-white hover:bg-stone-100 border border-stone-300 px-5 py-2 rounded-full flex items-center gap-2 text-sm transition"><i class="fas fa-route"></i> Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KONTAK & MEDIA SOSIAL ========== -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-stone-800">📱 Temukan Kami di <span class="text-emerald-700">Media Sosial</span></h2>
+      <p class="text-stone-500 mt-2">Ikuti kami untuk promo, menu terbaru & suasana Pine Grove House</p>
+      
+      <div class="flex flex-wrap justify-center gap-6 mt-8">
+        <a href="#" class="group flex items-center gap-3 bg-stone-100 hover:bg-emerald-100 px-6 py-3 rounded-full transition shadow-sm">
+          <i class="fab fa-instagram text-2xl text-pink-600 group-hover:scale-110 transition"></i>
+          <span class="font-medium">@pinegrovehouse</span>
+        </a>
+        <a href="#" class="group flex items-center gap-3 bg-stone-100 hover:bg-emerald-100 px-6 py-3 rounded-full transition shadow-sm">
+          <i class="fab fa-facebook text-2xl text-blue-700 group-hover:scale-110 transition"></i>
+          <span class="font-medium">Pine Grove House</span>
+        </a>
+        <a href="#" class="group flex items-center gap-3 bg-stone-100 hover:bg-emerald-100 px-6 py-3 rounded-full transition shadow-sm">
+          <i class="fab fa-tiktok text-2xl text-stone-800 group-hover:scale-110 transition"></i>
+          <span class="font-medium">@pinegrove</span>
+        </a>
+        <a href="https://wa.me/6285976546706" target="_blank" class="group flex items-center gap-3 bg-emerald-600 text-white hover:bg-emerald-700 px-6 py-3 rounded-full transition shadow-md">
+          <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition"></i>
+          <span class="font-medium">WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="mt-12 border-t border-stone-200 pt-8 text-sm text-stone-400 flex flex-col sm:flex-row justify-center gap-4">
+        <span><i class="fas fa-map-pin text-emerald-600 mr-1"></i> Jl. Ciraya Rt14 Rw17, Bogor</span>
+        <span><i class="fas fa-phone text-emerald-600 mr-1"></i> 0859-7654-6706</span>
+        <span><i class="fas fa-envelope text-emerald-600 mr-1"></i> hello@pinegrovehouse.id</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-stone-900 text-stone-300 py-6 border-t border-emerald-800/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm">
+      <span>© 2026 Pine Grove House · Restoran di Bogor</span>
+      <span class="flex items-center gap-3">
+        <span class="hidden sm:inline">|</span>
+        <span><i class="fas fa-tree text-emerald-400"></i> sejak 2018</span>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPT MOBILE MENU ========== -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      // toggle icon
+      const icon = menuBtn.querySelector('i');
+      if (mobileMenu.classList.contains('hidden')) {
+        icon.className = 'fas fa-bars';
+      } else {
+        icon.className = 'fas fa-times';
+      }
+    });
+    // menutup menu saat link diklik (mobile)
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.querySelector('i').className = 'fas fa-bars';
+      });
+    });
+  </script>
+</body>
+</html
